@@ -1,65 +1,75 @@
-<!-- index.html -->
+<!-- index.html (Updated) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">MyLogo</div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="hobbies.html">Hobbies</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
         </ul>
     </nav>
 
-    <!-- Home Section -->
+    <!-- Home Page Content -->
     <section id="home" class="section home-section">
         <h1>Welcome to My Personal Website</h1>
-        <p>Your catchy intro goes here...</p>
+        <h2>I'm Gareth Horne, a Software Developer</h2>
+        <p>When was the last time you did something for the first time?</p>
+        <a href="portfolio.html" class="cta-button">View My Portfolio</a>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section experience-section">
-        <h2>My Experience</h2>
-        <p>Details about your professional experience go here...</p>
+    <section class="section intro-section">
+        <h2>About Me</h2>
+        <p>A brief introduction about yourself. Highlight your experience, passions, and what sets you apart.</p>
     </section>
 
-    <!-- Hobbies Section -->
-    <section id="hobbies" class="section hobbies-section">
-        <h2>Hobbies & Interests</h2>
-        <ul class="hobbies-links">
-            <li><a href="#boardgames">Boardgames</a></li>
-            <li><a href="#hiking">Hiking</a></li>
-            <li><a href="#fi">Financial Independence</a></li>
-        </ul>
-        
-        <div id="boardgames" class="hobby-section">
-            <h3>Boardgames</h3>
-            <p>Details about board games go here...</p>
-        </div>
-
-        <div id="hiking" class="hobby-section">
-            <h3>Hiking</h3>
-            <p>Details about hiking go here...</p>
-        </div>
-
-        <div id="fi" class="hobby-section">
-            <h3>Financial Independence</h3>
-            <p>Details about financial independence go here...</p>
+    <section class="section highlights-section">
+        <h2>Featured Projects</h2>
+        <div class="project-cards">
+            <div class="project-card">
+                <h3>Project One</h3>
+                <p>Brief description of this project...</p>
+                <a href="portfolio.html">Read more</a>
+            </div>
+            <div class="project-card">
+                <h3>Project Two</h3>
+                <p>Brief description of this project...</p>
+                <a href="portfolio.html">Read more</a>
+            </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section portfolio-section">
-        <h2>Portfolio</h2>
-        <p>Showcase your projects here...</p>
+    <section class="section testimonials-section">
+        <h2>Testimonials</h2>
+        <blockquote>
+            <p>"[Your Name] is incredibly talented and a pleasure to work with."</p>
+            <footer>— Client Name, Company</footer>
+        </blockquote>
+    </section>
+
+    <section class="section blog-section">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-cards">
+            <div class="blog-card">
+                <h3>Blog Post Title</h3>
+                <p>Excerpt of the blog post...</p>
+                <a href="hobbies.html#fi">Read more</a>
+            </div>
+            <div class="blog-card">
+                <h3>Another Blog Post Title</h3>
+                <p>Excerpt of the blog post...</p>
+                <a href="hobbies.html#hiking">Read more</a>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -73,12 +83,13 @@
     </footer>
 
     <script>
-    document.querySelectorAll('.hobbies-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = e.target.getAttribute('href').substring(1);
-            document.querySelector(`#${targetId}`).scrollIntoView({ behavior: 'smooth' });
-        });
-    });</script>
+        document.querySelectorAll('.hobbies-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').substring(1);
+        document.querySelector(`#${targetId}`).scrollIntoView({ behavior: 'smooth' });
+    });
+});
+    </script>
 </body>
 </html>
