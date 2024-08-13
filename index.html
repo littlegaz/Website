@@ -1,0 +1,84 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">MyLogo</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+        <h1>Welcome to My Personal Website</h1>
+        <p>Your catchy intro goes here...</p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+        <h2>My Experience</h2>
+        <p>Details about your professional experience go here...</p>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="section hobbies-section">
+        <h2>Hobbies & Interests</h2>
+        <ul class="hobbies-links">
+            <li><a href="#boardgames">Boardgames</a></li>
+            <li><a href="#hiking">Hiking</a></li>
+            <li><a href="#fi">Financial Independence</a></li>
+        </ul>
+        
+        <div id="boardgames" class="hobby-section">
+            <h3>Boardgames</h3>
+            <p>Details about board games go here...</p>
+        </div>
+
+        <div id="hiking" class="hobby-section">
+            <h3>Hiking</h3>
+            <p>Details about hiking go here...</p>
+        </div>
+
+        <div id="fi" class="hobby-section">
+            <h3>Financial Independence</h3>
+            <p>Details about financial independence go here...</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio-section">
+        <h2>Portfolio</h2>
+        <p>Showcase your projects here...</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Connect with me on social media:</p>
+        <ul class="social-links">
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">GitHub</a></li>
+        </ul>
+    </footer>
+
+    <script>
+    document.querySelectorAll('.hobbies-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = e.target.getAttribute('href').substring(1);
+            document.querySelector(`#${targetId}`).scrollIntoView({ behavior: 'smooth' });
+        });
+    });</script>
+</body>
+</html>
