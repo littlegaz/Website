@@ -1,5 +1,4 @@
 /* styles.css (continued) */
-
 .navbar {
     background-color: #444;
     padding: 1em;
@@ -44,15 +43,15 @@
     padding: 60px 20px;
     text-align: center;
 }
-
 .experience-header h1 {
     font-size: 2.5em;
     margin-bottom: 0.5em;
 }
 
 .experience-header p {
-    font-size: 1.2em;
+    font-size: 1.8em;
 }
+
 
 /* Soft Skills Section */
 .skills-section {
