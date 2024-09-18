@@ -97,63 +97,103 @@ body {
 }
 
 
-
-
-
-
-/* Boardgame Grid Section */
-.boardgame-grid {
+/* Main Content Styles */
+.content-section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
-    gap: 20px; /* Spacing between the grid items */
-    padding: 40px;
+    grid-template-columns: 1fr 2fr 1fr; /* Three columns: left, middle, right */
+    gap: 20px;
+    padding: 40px 20px;
     background-color: #f9f9f9;
 }
 
-.boardgame-card {
-    text-align: center;
-    background-color: #fff;
+.game-info {
+    background-color: #444;
+    color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.boardgame-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.boardgame-title {
-    font-size: 1.2em;
+.game-info h2 {
     margin-bottom: 15px;
-    font-weight: bold;
-    color: #333;
 }
 
-.boardgame-image {
-    width: 100%;
+.game-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.game-info ul li {
+    margin-bottom: 10px;
+}
+
+.game-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.game-image img {
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
-    max-height: 200px; /* Ensure images don't stretch too much */
-    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+.game-description h2 {
+    margin-top: 0;
+}
+
+.related-links {
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.related-links h2 {
     margin-bottom: 15px;
 }
 
-.boardgame-card a {
+.related-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.related-links ul li {
+    margin-bottom: 10px;
+}
+
+.related-links ul li a {
+    color: #ff6347;
     text-decoration: none;
-    color: inherit;
+    transition: color 0.3s;
 }
 
-/* Responsive Layout for Smaller Screens */
-@media (max-width: 1024px) {
-    .boardgame-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-    }
+.related-links ul li a:hover {
+    color: white;
 }
 
-@media (max-width: 600px) {
-    .boardgame-grid {
-        grid-template-columns: 1fr; /* 1 column on small screens */
-    }
+/* Review Section */
+.review-section {
+    padding: 40px 20px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    margin-left: 5%;  /* Push in 5% from the left */
+    margin-right: 5%; /* Push in 5% from the right */
+    max-width: 90%;   /* Ensure the content takes up no more than 90% of the screen width */
+    border-radius: 8px;
+    margin-bottom: 40px;
 }
+
+.review-section h2 {
+    margin-bottom: 20px;
+}
+
+.review-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
