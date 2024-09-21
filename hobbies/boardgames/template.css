@@ -139,6 +139,7 @@ body {
 .game-image img {
     max-width: 100%;
     height: auto;
+    max-width: 600px;
     border-radius: 8px;
 }
 
