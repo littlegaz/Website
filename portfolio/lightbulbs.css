@@ -1,0 +1,188 @@
+/* styles.css (Updated) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.navbar {
+    background-color: #444;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Space between links */
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    color: #fff; /* White text color */
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #ff6347; /* Change to accent color on hover */
+}
+
+/* Home Page Styles */
+.home-section {
+    background-color: #282c34;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.home-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.home-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+.home-section p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e5533d;
+}
+
+.intro-section, .highlights-section, .testimonials-section, .blog-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.project-cards, .blog-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card, .blog-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    min-width: 250px;
+}
+
+.testimonials-section blockquote {
+    font-style: italic;
+    color: #555;
+    margin: 0;
+}
+
+.testimonials-section footer {
+    margin-top: 10px;
+    color: #888;
+}
+
+.footer {
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
+
+
+/* Lightbulb Grid Styles */
+#lightbulb1, #lightbulb2, #lightbulb3, #lightbulb4, #lightbulb5, #lightbulb6,
+#lightbulb7, #lightbulb8, #lightbulb9, #lightbulb10, #lightbulb11, #lightbulb12 {
+    font-size: 7em;
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+#lightbulb1.active, #lightbulb2.active, #lightbulb3.active, #lightbulb4.active,
+#lightbulb5.active, #lightbulb6.active, #lightbulb7.active, #lightbulb8.active,
+#lightbulb9.active, #lightbulb10.active, #lightbulb11.active, #lightbulb12.active {
+    background-color: #ff6347;
+    color: white;
+}
+
+/* Align the wrapper for the lightbulbs */
+#wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-section {
+    display: flex;
+    flex-direction: column;  /* Stacks items vertically */
+    align-items: center;     /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically */
+    text-align: center;      /* Ensures all text is centered */
+}
+
+.reset {
+    margin-top: 20px;  /* Adjust this value as needed */
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+

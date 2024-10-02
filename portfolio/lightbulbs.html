@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightbulb Click Game</title>
+    <link rel="stylesheet" href="lightbulbs.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">MyLogo</div>
+        <ul class="nav-links">
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../experience.html">Experience</a></li>
+            <li><a href="../../hobbies.html">Hobbies</a></li>
+            <li><a href="../../portfolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section (Introduction) -->
+    <section id="home" class="section home-section">
+        <h1>Lightbulb Click Game</h1>
+        <p>Click the lightbulbs to toggle them on and off. Try resetting the game to start over!</p>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="game-section">
+        <h2 class="title">Lightbulb Selectors</h2>
+        <h3 class="subtitle">You've clicked the lights 0 times</h3>
+        <h3 class="subsubtitle">You've reset the counter 0 times</h3>
+        <button class="reset cta-button">Reset the counter</button>
+
+        <h3 class="success-message" style="display: none; color: green;">All lightbulbs are ON! 🎉</h3>
+
+        <!-- Lightbulb Grid -->
+        <div id="wrapper">
+            <div class="row">
+                <div id="lightbulb1" class="item lightbulb active">💡</div>
+                <div id="lightbulb2" class="item lightbulb">💡</div>
+                <div id="lightbulb3" class="item lightbulb">💡</div>
+                <div id="lightbulb4" class="item lightbulb active">💡</div>
+                <div id="lightbulb5" class="item lightbulb">💡</div>
+                <div id="lightbulb6" class="item lightbulb">💡</div>
+                <div id="lightbulb7" class="item lightbulb active">💡</div>
+                <div id="lightbulb8" class="item lightbulb">💡</div>
+                <div id="lightbulb9" class="item lightbulb">💡</div>
+                <div id="lightbulb10" class="item lightbulb active">💡</div>
+                <div id="lightbulb11" class="item lightbulb">💡</div>
+                <div id="lightbulb12" class="item lightbulb">💡</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Connect with me on social media:</p>
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com/KingGargeth">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/gareth-horne-1321b52a0/">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/lilgee.86/">Instagram</a></li>
+            <li><a href="https://www.youtube.com/channel/UC3s_Z_tmnFG0VLPrYDmfJjQ">YouTube</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        const button = document.querySelector(".reset");
+        const lightbulbs = Array.from(document.querySelectorAll(".lightbulb")); // Create an array of lightbulbs
+        const subtitle = document.querySelector(".subtitle");
+        const subsubtitle = document.querySelector(".subsubtitle");
+        const successMessage = document.querySelector(".success-message");
+        let count = 0;
+        let resetcount = 0;
+
+        // Add click event listeners to each lightbulb
+        lightbulbs.forEach(lightbulb => {
+            lightbulb.addEventListener("click", function () {
+                count++;
+                subtitle.innerHTML = `You've clicked the lights ${count} times`;
+                this.classList.toggle("active");
+
+                // Toggle related lightbulbs based on your existing logic
+                if (this.id === "lightbulb1") {
+                    document.querySelector("#lightbulb3").classList.toggle("active");
+                    document.querySelector("#lightbulb7").classList.toggle("active");
+                } else if (this.id === "lightbulb2") {
+                    document.querySelector("#lightbulb11").classList.toggle("active");
+                } else if (this.id === "lightbulb3") {
+                    document.querySelector("#lightbulb9").classList.toggle("active");
+                } else if (this.id === "lightbulb5") {
+                    document.querySelector("#lightbulb1").classList.toggle("active");
+                    document.querySelector("#lightbulb6").classList.toggle("active");
+                } else if (this.id === "lightbulb6") {
+                    document.querySelector("#lightbulb10").classList.toggle("active");
+                    document.querySelector("#lightbulb12").classList.toggle("active");
+                } else if (this.id === "lightbulb8") {
+                    document.querySelector("#lightbulb2").classList.toggle("active");
+                } else if (this.id === "lightbulb10") {
+                    document.querySelector("#lightbulb4").classList.toggle("active");
+                    document.querySelector("#lightbulb5").classList.toggle("active");
+                } else if (this.id === "lightbulb12") {
+                    document.querySelector("#lightbulb8").classList.toggle("active");
+                }
+
+                checkAllLightbulbs(); // Check after each click
+            });
+        });
+
+        button.addEventListener("click", function () {
+            count = 0;
+            resetcount++;
+            subtitle.innerHTML = `You've clicked the lights ${count} times`;
+            subsubtitle.innerHTML = `You've reset the counter ${resetcount} times`;
+            successMessage.style.display = "none"; // Hide success message on reset
+            lightbulbs.forEach(lightbulb => lightbulb.classList.remove("active")); // Optional: Reset lightbulbs
+        });
+
+        function checkAllLightbulbs() {
+            const allActive = lightbulbs.every(lightbulb => lightbulb.classList.contains("active"));
+
+            if (allActive) {
+                successMessage.style.display = "block"; // Show success message
+            }
+        }
+    </script>
+</body>
+</html>
+
