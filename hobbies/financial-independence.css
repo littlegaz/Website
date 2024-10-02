@@ -95,3 +95,56 @@ body {
 .social-links a:hover {
     color: #fff;
 }
+
+
+/* Topics Section */
+.topics-section {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.topic-button {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+    max-height: 400px; /* Limit the height of each button */
+}
+
+.topic-button:hover {
+    background-color: #ff6347;
+    color: white;
+}
+
+.topic-button img {
+    width: 200px; /* Smaller fixed width */
+    height: 200px; /* Smaller fixed height */
+    margin-right: 20px;
+    border-radius: 10px;
+    object-fit: cover; /* Ensure the image maintains aspect ratio and doesn't distort */
+}
+
+.topic-button span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .button-grid {
+        grid-template-columns: 1fr; /* On small screens, switch to single column */
+    }
+}

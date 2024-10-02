@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.navbar {
+    background-color: #444;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #ff6347;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #282c34;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+/* Content Section */
+.content-section {
+    padding: 50px 20px;
+    background-color: #fff;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.grid-item h2 {
+    margin-bottom: 15px;
+}
+
+.grid-item p, .grid-item ul {
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.grid-item ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Key Takeaways Section */
+.key-takeaways {
+    background-color: #ff6347;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.key-takeaways h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.key-takeaways ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.key-takeaways ul li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #444;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Switch to single column on small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
