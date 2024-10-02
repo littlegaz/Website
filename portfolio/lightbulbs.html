@@ -11,10 +11,10 @@
     <nav class="navbar">
         <div class="logo">MyLogo</div>
         <ul class="nav-links">
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../experience.html">Experience</a></li>
-            <li><a href="../../hobbies.html">Hobbies</a></li>
-            <li><a href="../../portfolio.html">Portfolio</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../experience.html">Experience</a></li>
+            <li><a href="../hobbies.html">Hobbies</a></li>
+            <li><a href="../portfolio.html">Portfolio</a></li>
         </ul>
     </nav>
 
@@ -36,16 +36,16 @@
         <!-- Lightbulb Grid -->
         <div id="wrapper">
             <div class="row">
-                <div id="lightbulb1" class="item lightbulb active">💡</div>
+                <div id="lightbulb1" class="item lightbulb">💡</div>
                 <div id="lightbulb2" class="item lightbulb">💡</div>
                 <div id="lightbulb3" class="item lightbulb">💡</div>
-                <div id="lightbulb4" class="item lightbulb active">💡</div>
+                <div id="lightbulb4" class="item lightbulb">💡</div>
                 <div id="lightbulb5" class="item lightbulb">💡</div>
                 <div id="lightbulb6" class="item lightbulb">💡</div>
-                <div id="lightbulb7" class="item lightbulb active">💡</div>
+                <div id="lightbulb7" class="item lightbulb">💡</div>
                 <div id="lightbulb8" class="item lightbulb">💡</div>
                 <div id="lightbulb9" class="item lightbulb">💡</div>
-                <div id="lightbulb10" class="item lightbulb active">💡</div>
+                <div id="lightbulb10" class="item lightbulb">💡</div>
                 <div id="lightbulb11" class="item lightbulb">💡</div>
                 <div id="lightbulb12" class="item lightbulb">💡</div>
             </div>
@@ -84,20 +84,36 @@
                     document.querySelector("#lightbulb3").classList.toggle("active");
                     document.querySelector("#lightbulb7").classList.toggle("active");
                 } else if (this.id === "lightbulb2") {
-                    document.querySelector("#lightbulb11").classList.toggle("active");
+                    document.querySelector("#lightbulb5").classList.toggle("active");
+                    document.querySelector("#lightbulb8").classList.toggle("active");
                 } else if (this.id === "lightbulb3") {
-                    document.querySelector("#lightbulb9").classList.toggle("active");
-                } else if (this.id === "lightbulb5") {
                     document.querySelector("#lightbulb1").classList.toggle("active");
                     document.querySelector("#lightbulb6").classList.toggle("active");
-                } else if (this.id === "lightbulb6") {
+                } else if (this.id === "lightbulb4"){
+                    document.querySelector("#lightbulb7").classList.toggle("active");
+                } else if (this.id === "lightbulb5") {
+                    document.querySelector("#lightbulb2").classList.toggle("active");
                     document.querySelector("#lightbulb10").classList.toggle("active");
-                    document.querySelector("#lightbulb12").classList.toggle("active");
+                } else if (this.id === "lightbulb6") {
+                    document.querySelector("#lightbulb3").classList.toggle("active");
+                    document.querySelector("#lightbulb11").classList.toggle("active");
+                } else if (this.id === "lightbulb7") {
+                    document.querySelector("#lightbulb4").classList.toggle("active");
+                    document.querySelector("#lightbulb9").classList.toggle("active");
                 } else if (this.id === "lightbulb8") {
                     document.querySelector("#lightbulb2").classList.toggle("active");
+                    document.querySelector("#lightbulb12").classList.toggle("active");
+                } else if (this.id === "lightbulb9") {
+                    document.querySelector("#lightbulb7").classList.toggle("active");
+                    document.querySelector("#lightbulb10").classList.toggle("active");
+                } else if (this.id === "lightbulb10") {
+                    document.querySelector("#lightbulb9").classList.toggle("active");
+                    document.querySelector("#lightbulb5").classList.toggle("active");
                 } else if (this.id === "lightbulb10") {
                     document.querySelector("#lightbulb4").classList.toggle("active");
                     document.querySelector("#lightbulb5").classList.toggle("active");
+                } else if (this.id === "lightbulb11") {
+                    document.querySelector("#lightbulb6").classList.toggle("active");
                 } else if (this.id === "lightbulb12") {
                     document.querySelector("#lightbulb8").classList.toggle("active");
                 }
