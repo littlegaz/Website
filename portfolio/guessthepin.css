@@ -1,67 +1,60 @@
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-.header {
+.navbar {
+    background-color: #444;
+    padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #004750;
-    padding: 10px 20px;
+    color: #fff;
 }
 
-.logo {
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center;
+    gap: 15px; /* Space between links */
 }
 
-.logo img {
-    height: 50px; /* Adjust as needed */
+.navbar .nav-links li {
+    display: inline;
 }
 
-.logo-text {
-    padding-left: 25px;
-    color: #AFFDFD;
-    font-size: 24px;
-}
-
-.menu {
-    display: flex;
-    align-items: center;
-}
-
-.button {
-    background-color: #007481;
-    color: #AFFDFD;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.dropdown {
-    background-color: #CDF5E8;
-    color: #001276;
-    border: none;
-    border-radius: 5px;
+.navbar .nav-links a {
+    color: #fff; /* White text color */
+    text-decoration: none;
     padding: 10px;
-    margin-left: 10px;
+    transition: color 0.3s;
 }
 
-.title-banner {
-    background-color: #CDF5E8;
-    color: #001276;
+.navbar .nav-links a:hover {
+    color: #ff6347; /* Change to accent color on hover */
+}
+
+
+.home-section {
+    background-color: #282c34;
+    color: white;
+    padding: 100px 20px;
     text-align: center;
-    padding: 20px 0;
-    height: 100px; /* Twice the height of the header */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
+.home-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
 
 
 
@@ -80,8 +73,8 @@ body {
 .safety-tips {
     width: 350px;
     padding: 20px;
-    background-color: #007481;
-    color: #AFFDFD;
+    background-color: #282c34;
+    color: white;
     border-radius: 15px 15px 0 0;
     text-align: center;
 }
@@ -111,8 +104,8 @@ body {
 button {
     margin: 10px;
     padding: 10px 20px;
-    background-color: #004750;
-    color: #AFFDFD;
+    background-color: #333;
+    color: #f4f4f4;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -156,18 +149,25 @@ button:hover {
 
 
 .footer {
-    background-color: #004750;
-    color: #AFFDFD;
-    text-align: center;
+    background-color: #444;
+    color: white;
     padding: 20px;
+    text-align: center;
 }
 
-.social-icons {
-    margin-top: 10px;
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-.social-icon {
-    margin: 0 10px;
-    color: #AFFDFD;
+.social-links a {
+    color: #ff6347;
     text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #fff;
 }
