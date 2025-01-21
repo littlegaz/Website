@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004750;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Adjust as needed */
+}
+
+.logo-text {
+    padding-left: 25px;
+    color: #AFFDFD;
+    font-size: 24px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    background-color: #007481;
+    color: #AFFDFD;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+    background-color: #CDF5E8;
+    color: #001276;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.title-banner {
+    background-color: #CDF5E8;
+    color: #001276;
+    text-align: center;
+    padding: 20px 0;
+    height: 100px; /* Twice the height of the header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+.safety-tips {
+    width: 350px;
+    padding: 20px;
+    background-color: #007481;
+    color: #AFFDFD;
+    border-radius: 15px 15px 0 0;
+    text-align: center;
+}
+
+.game {
+    text-align: center;
+    width: 350px;
+    padding: 20px;
+    background-color: #e0e0e0;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #3c3c3c;
+    border-top: none;
+}
+
+.number-box {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    margin: 0 5px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 2px solid #004750;
+    border-radius: 5px;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #004750;
+    color: #AFFDFD;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005d60;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #001276;
+}
+
+.keypad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.keypad button {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    font-size: 18px;
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Ensure any text is centered */
+}
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background-color: #004750;
+    color: #AFFDFD;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: #AFFDFD;
+    text-decoration: none;
+}

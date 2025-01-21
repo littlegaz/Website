@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guess the PIN</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+ 
+
+    <!-- This is the code for the header with the logo, log out, profile and menu -->
+    <header class="header">
+        <div class="logo">
+            <!-- Logo image will go here -->
+            <img src="eaglelogo.png" alt="Logo">
+            <span class="logo-text">FUNdamentals</span>
+        </div>
+
+        <div class="menu">
+            <button class="button">Log Out</button>
+            <button class="button">Profile</button>
+            <select class="dropdown">
+                <option value="" disabled selected>Menu</option>
+                <option>Home</option>
+                <option>Module Selection</option>
+                <option>Quick Facts</option>
+                <option>Quiz</option>
+               
+            </select>
+        </div>
+      </header>
+
+
+
+
+      <!-- This is the code for the Title and Instructions -->
+      <div class="title-banner">
+          <h1>Guess The PIN</h1>
+          <h4>Use the numbers to guess the PIN and click 'Submit Guess'. You will be given clues everytime you guess and top tips on how your keep your own Debit Card PIN safe </h4>
+      </div>
+
+
+
+
+      <!-- This is the code for the game -->
+      <div class="container">
+        <div class="safety-tips" id="safety-tips">
+          <!-- Tips will appear here -->
+      </div>
+        <div class="game">
+            <div id="boxes">
+                <input type="text" maxlength="1" class="number-box" disabled>
+                <input type="text" maxlength="1" class="number-box" disabled>
+                <input type="text" maxlength="1" class="number-box" disabled>
+                <input type="text" maxlength="1" class="number-box" disabled>
+            </div>
+            <div class="keypad">
+                <button onclick="enterNumber(1)">1</button>
+                <button onclick="enterNumber(2)">2</button>
+                <button onclick="enterNumber(3)">3</button>
+                <button onclick="enterNumber(4)">4</button>
+                <button onclick="enterNumber(5)">5</button>
+                <button onclick="enterNumber(6)">6</button>
+                <button onclick="enterNumber(7)">7</button>
+                <button onclick="enterNumber(8)">8</button>
+                <button onclick="enterNumber(9)">9</button>
+                <button onclick="enterNumber(0)">0</button>
+            </div>
+            <button onclick="submitGuess()">Submit Guess</button>
+            <button onclick="resetGame()">Reset Game</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+   
+
+
+
+
+      <!-- This is the code for the footer -->
+      <footer class="footer">
+        <p>Barclays Bank UK PLC. Authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority (Financial Services Register No. 759676).</p>
+        <p>Registered in England. Registered No. 9740322. Registered Office: 1 Churchill Place, London E14 5HP.</p>
+        <div class="social-icons">
+            <!-- Placeholders for social media icons -->
+            <a href=https://www.facebook.com/BarclaysUK class="social-icon">Facebook</a>
+            <a href=https://www.twitter.com/BarclaysUK class="social-icon">Twitter</a>
+            <a href=https://uk.linkedin.com/company/barclays-uk class="social-icon">LinkedIn</a>
+            <a href=https://www.instagram.com/BarclaysUK class="social-icon">Instagram</a>
+        </div>
+    </footer>
+
+ 
+
+     
+
+<!-- This is the javascript for the game -->
+
+  <script>
+let randomNumbers = [];
+let currentIndex = 0;
+let safetyTips = [
+    "Keep your PIN secret.",
+    "Don't write your PIN down either on paper or your mobile.",
+    "Avoid easy to guess PINs, like birthdates.",
+    "Avoid number sequences or patterns for example, 1111 or 6789.",
+    "You can change your PIN at any cash machine using the 'PIN Services' menu.",
+    "If you enter the wrong PIN three times, your PIN will lock and stop your card from working",
+    "Try to use a different PIN for each card and make it different to your mobile lock screen PIN.",
+    "When entering your PIN, check to see if anyone is watching you.",
+    "When entering your PIN, it helps to cover the keypad to stop other people from seeing your PIN.",
+    "The bank will never ask you for your PIN.",
+    "Never tell someone else your PIN.",
+    "If you think someone else knows your PIN, change it immediately.",
+    "Never leave your debit card unattended in a public place.",
+    "If your debit card is stolen, contact your bank immediately.",
+    "This works great and very easy to remember for setting a new PIN. Choose a four-letter word, for example, FISH, use the keypad to spell the word, FISH would be 3474.",
+    "£78.9 million was stolen from customer accounts through stolen debit cards. This is the same as the third highest paid footballer in the world Neymar's annual salary!"
+];
+
+ 
+
+function generateRandomNumbers() {
+    randomNumbers = Array.from({ length: 4 }, () => Math.floor(Math.random() * 10));
+    console.log("Random Numbers: ", randomNumbers); // For debugging purposes
+}
+
+ 
+
+document.addEventListener('DOMContentLoaded', function() {
+    generateRandomNumbers();
+    showRandomTip();
+});
+
+ 
+
+window.enterNumber = function(num) {
+    const boxes = document.querySelectorAll('.number-box');
+    if (currentIndex < boxes.length) {
+        boxes[currentIndex].value = num;
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+        boxes[currentIndex].value = num;
+        currentIndex++;
+    }
+};
+
+ 
+
+function showRandomTip() {
+    const randomIndex = Math.floor(Math.random() * safetyTips.length);
+    document.getElementById('safety-tips').innerText = safetyTips[randomIndex];
+}
+
+ 
+
+window.submitGuess = function() {
+    const userInputs = Array.from(document.querySelectorAll('.number-box')).map(input => input.value);
+    let feedback = userInputs.map((input, index) => {
+        return input == randomNumbers[index] ? `✔️` : `❌`;
+    }).join(' ');
+
+ 
+
+    if (userInputs.every((input, index) => input == randomNumbers[index])) {
+        document.getElementById('result').innerText = 'Congratulations! You guessed the PIN!';
+    } else {
+        document.getElementById('result').innerText = `Try again! ${feedback}`;
+        currentIndex = 0;
+    }
+    showRandomTip(); // Show a new tip on each submit
+};
+
+
+
+
+window.resetGame = function() {
+    generateRandomNumbers();
+    document.querySelectorAll('.number-box').forEach(input => input.value = '');
+    document.getElementById('result').innerText = '';
+    currentIndex = 0;
+    showRandomTip();
+};
+
+
+
+    </script>
+</body>
+</html>
