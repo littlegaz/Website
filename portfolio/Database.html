@@ -1,0 +1,139 @@
+<!-- Database.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Database Query Practise</title>
+    <link rel="stylesheet" href="Database.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">MyLogo</div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../experience.html">Experience</a></li>
+            <li><a href="../hobbies.html">Hobbies</a></li>
+            <li><a href="../portfolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <!-- Experience Header -->
+    <header class="experience-header">
+        <h1>SQL Practise</h1>
+        <p>Practise writing SQL queries using this browser database.</p>
+        <p>The table called countries contains the columns id, name, capital, population and continent</p>
+    </header>
+
+    <div class="container">
+        <h1>Countries Database</h1>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="view">View Countries</button>
+            <button class="tab-btn" data-tab="add">Add Country</button>
+            <button class="tab-btn" data-tab="search">Search</button>
+            <button class="tab-btn" data-tab="query">Custom SQL Query</button>
+
+        </div>
+        
+        <div class="tab-content active" id="view">
+            <h2>All Countries</h2>
+            <div id="countries-list"></div>
+        </div>
+        
+        <div class="tab-content" id="add">
+            <h2>Add New Country</h2>
+            <form id="add-country-form">
+                <div class="form-group">
+                    <label for="name">Country Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="capital">Capital City:</label>
+                    <input type="text" id="capital" required>
+                </div>
+                <div class="form-group">
+                    <label for="population">Population:</label>
+                    <input type="number" id="population" required>
+                </div>
+                <div class="form-group">
+                    <label for="continent">Continent:</label>
+                    <select id="continent" required>
+                        <option value="">Select Continent</option>
+                        <option value="Africa">Africa</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="North America">North America</option>
+                        <option value="South America">South America</option>
+                        <option value="Oceania">Oceania</option>
+                        <option value="Antarctica">Antarctica</option>
+                    </select>
+                </div>
+                <button type="submit">Add Country</button>
+            </form>
+        </div>
+        
+        <div class="tab-content" id="search">
+            <h2>Search Countries</h2>
+            
+            <div class="filter-section">
+                <h3>Filter by Continent</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn" data-filter="continent" data-value="">All</button>
+                    <button class="filter-btn" data-filter="continent" data-value="Africa">Africa</button>
+                    <button class="filter-btn" data-filter="continent" data-value="Asia">Asia</button>
+                    <button class="filter-btn" data-filter="continent" data-value="Europe">Europe</button>
+                    <button class="filter-btn" data-filter="continent" data-value="North America">North America</button>
+                    <button class="filter-btn" data-filter="continent" data-value="South America">South America</button>
+                    <button class="filter-btn" data-filter="continent" data-value="Oceania">Oceania</button>
+                </div>
+            </div>
+            
+            <div class="filter-section">
+                <h3>Filter by Population</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn" data-filter="population" data-value="all">All</button>
+                    <button class="filter-btn" data-filter="population" data-value="small">Less than 10 Million</button>
+                    <button class="filter-btn" data-filter="population" data-value="medium">10-100 Million</button>
+                    <button class="filter-btn" data-filter="population" data-value="large">100-500 Million</button>
+                    <button class="filter-btn" data-filter="population" data-value="huge">More than 500 Million</button>
+                </div>
+            </div>
+            
+            <div id="search-results" class="results-container">
+                <!-- Results will appear here -->
+            </div>
+        </div>
+
+        <div class="tab-content" id="query">
+            <h2>Custom SQL Query</h2>
+            <div class="query-container">
+              <textarea id="sql-input" placeholder="Enter your SQL query here... (e.g., SELECT * FROM countries WHERE continent = 'Europe')" rows="4"></textarea>
+              <button id="run-query">Run Query</button>
+              <div id="query-results"></div>
+            </div>
+          </div>
+<br>
+          <button id="reset-db">Reset Database</button>
+
+
+          <!-- Footer -->
+    <footer class="footer">
+        <p>Connect with me on social media:</p>
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com/KingGargeth">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/in/gareth-horne-1321b52a0/">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/lilgee.86/">Instagram</a></li>
+            <li><a href="https://www.youtube.com/channel/UC3s_Z_tmnFG0VLPrYDmfJjQ">YouTube</a></li>
+        </ul>
+    </footer>
+
+
+
+
+    <!-- Load SQL.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
+    <script src="Database.js"></script>
+</body>
+</html>
